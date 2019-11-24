@@ -9,7 +9,7 @@ import (
 func main() {
 
 	// Using var
-	var fakerNameTest = faker.Name().String
+	var fakerNameTest = faker.Name()
 	// var name = "TOM: " + faker.RandomString(10)
 
 	var ageTest int64 = 100
@@ -24,7 +24,7 @@ func main() {
 
 	name, email := "jack", "jack@test.com"
 
-	fmt.Println("Hello, ", fakerNameTest())
+	fmt.Println("Hello2, ", fakerNameTest)
 
 	fmt.Println(name, ageTest, isCool, size, email)
 
