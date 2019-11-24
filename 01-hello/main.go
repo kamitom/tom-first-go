@@ -13,7 +13,7 @@ func main() {
 
 }
 
-// multiple value
+// multiple values
 func test() (string, int) {
 	fName := faker.Name().FirstName
 	fNumber := faker.RandomInt(10,100)
