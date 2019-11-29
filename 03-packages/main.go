@@ -17,7 +17,7 @@ func main() {
 	// testme2 = 1000
 	testme3 := math.Ceil(2.7) //3
 
-	strReverse := strutil.Reverse("TOMTESTHERE")
+	strReverse := strutil.Reverse("這是 測試 abc")
 
 	fmt.Println("Hello World: ", faker.Name(), testme, testme2, testme3, strReverse)
 }
