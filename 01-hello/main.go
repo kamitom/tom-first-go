@@ -1,8 +1,10 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
 
-import "syreclabs.com/go/faker"
+	"syreclabs.com/go/faker"
+)
 
 func main() {
 	fmt.Println("hello, tom go app2 !!")
@@ -13,10 +15,14 @@ func main() {
 
 }
 
-// multiple values
-func test() (string, int) {
-	fName := faker.Name().FirstName
-	fNumber := faker.RandomInt(10,100)
-	
-	return fName(), fNumber
+// multiple return values
+func test() (r1 string, r2 int) {
+	if r2 == 0 {
+		r2 = 2
+	}
+	r1 = "ok test me"
+	fName := (faker.Name().FirstName)
+	fNumber := faker.RandomInt(10, 100) * r2
+
+	return fName() + " : " + r1, fNumber
 }

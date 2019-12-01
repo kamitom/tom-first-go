@@ -9,17 +9,30 @@ import (
 
 func indexFunc(w http.ResponseWriter, r *http.Request) {
 	fName := faker.Name()
-	testHTML := "<h1>Hello " + fName.Name() + "</h1>"
+	fNaumber := faker.RandomInt(10, 1000)
+	// testHTML := `<h1>Hello` + fName.Name()  + `</h1>`
 
-	fmt.Fprintf(w, testHTML)
+	// try backticks
+	testHTML2 := fmt.Sprintf(`
+	<h1>
+	Hello %s
+	<hr>
+	random number: %d
+	</h1>
+	`, fName.Name(), fNaumber)
+
+	fmt.Fprintf(w, testHTML2)
 }
 func aboutFunc(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, "<h1>About ME</h1>")
 }
 
 func main() {
+
+	exposePort := ":8633"
+
 	http.HandleFunc("/", indexFunc)
 	http.HandleFunc("/about", aboutFunc)
 	fmt.Println("server starting...")
-	http.ListenAndServe(":3003", nil)
+	http.ListenAndServe(exposePort, nil)
 }
