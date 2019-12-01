@@ -14,11 +14,13 @@ func indexFunc(w http.ResponseWriter, r *http.Request) {
 
 	// try backticks
 	testHTML2 := fmt.Sprintf(`
-	<h1>
-	Hello %s
-	<hr>
-	random number: %d
-	</h1>
+		<h1>
+			Hello %s
+		</h1>
+		<hr>
+		<h3>
+			random number: %d
+		</h3>
 	`, fName.Name(), fNaumber)
 
 	fmt.Fprintf(w, testHTML2)
