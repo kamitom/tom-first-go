@@ -7,22 +7,24 @@ import (
 )
 
 func main() {
-	fmt.Println("hello, tom go app2 !!")
+	// fmt.Println("hello, tom go app2 !!")
+	fmt.Println("new branch dev is ready.")
 
-	username, time := test()
+	returnedUsername, returnedNumber := multipleReturnValues()
 	fmt.Println("test multiple values return")
-	fmt.Println(username, time)
+	fmt.Println(returnedUsername, returnedNumber)
 
 }
 
 // multiple return values
-func test() (r1 string, r2 int) {
+func multipleReturnValues() (r1 string, r2 int) {
 	if r2 == 0 {
 		r2 = 2
 	}
-	r1 = "ok test me"
-	fName := (faker.Name().FirstName)
-	fNumber := faker.RandomInt(10, 100) * r2
+	r1 = "ok, random number is"
+	// fName := (faker.Name().FirstName)
+	fFullName := (faker.Name().Name)
+	fRandomNumber := faker.RandomInt(10, 300) * r2
 
-	return fName() + " : " + r1, fNumber
+	return fFullName() + " says: " + r1, fRandomNumber
 }
